@@ -15,13 +15,13 @@
      * */
     function strGetNum(str = '') {
         str = str.toString();
-        // 是否是负数
-        const isNegative = str[0] === '-';
         let result = '';
         const arr = str.match(/\d+/g); // 匹配数字
         if (!arr) {
             return result;
         }
+        // 是否是负数
+        const isNegative = str[0] === '-';
         // 第一个点的位置
         const pointExec = /\./.exec(str);
         // 第一个数字的位置

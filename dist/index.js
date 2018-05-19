@@ -24,13 +24,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
         str = str.toString();
-        // 是否是负数
-        var isNegative = str[0] === '-';
         var result = '';
         var arr = str.match(/\d+/g); // 匹配数字
         if (!arr) {
             return result;
         }
+        // 是否是负数
+        var isNegative = str[0] === '-';
         // 第一个点的位置
         var pointExec = /\./.exec(str);
         // 第一个数字的位置

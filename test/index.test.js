@@ -8,6 +8,8 @@ test(`从字符串中提取出数字部分`, () => {
     expect(strGetNum(0)).toEqual('0');
     expect(strGetNum(-0)).toEqual('0');
     expect(strGetNum('-0')).toEqual('0');
+    expect(strGetNum('-0.00')).toEqual('0.00');
+    expect(strGetNum('-0.01')).toEqual('-0.01');
     expect(strGetNum(1)).toEqual('1');
     expect(strGetNum(-1)).toEqual('-1');
     expect(strGetNum('10.2')).toEqual('10.2');

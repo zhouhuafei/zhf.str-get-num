@@ -31,6 +31,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         if (!arr) {
             return result;
         }
+        // 第一个点的位置
+        var pointExec = /\./.exec(str);
+        // 第一个数字的位置
+        var numExec = /\d/.exec(str);
+        if (pointExec && numExec && pointExec.index < numExec.index) {
+            arr.unshift('0');
+        }
         arr[0] = Number(arr[0]).toString(); //  arr如果存在，则把数组里第一项中的，0000变成0，0001变成1，0123变成123
         if (arr[1]) {
             arr.length = 2;

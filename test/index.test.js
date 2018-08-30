@@ -37,4 +37,10 @@ test(`从字符串中提取出数字部分`, () => {
     expect(strGetNum('-.2')).toEqual('-0.2');
     expect(strGetNum('-.3')).toEqual('-0.3');
     expect(strGetNum('-......3')).toEqual('-0.3');
+    expect(strGetNum('-')).toEqual('');
+    expect(strGetNum('+')).toEqual('');
+    expect(strGetNum('-10')).toEqual('-10');
+    expect(strGetNum('+10')).toEqual('10');
+    expect(strGetNum('10+10')).toEqual('10.10');
+    expect(strGetNum('10+010')).toEqual('10.010');
 });
